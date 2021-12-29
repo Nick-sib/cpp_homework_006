@@ -1,21 +1,14 @@
+#include <iostream>
 #include "Storage.h"
 #include "base/Mixer.h"
-#include "base/Mixer.cpp"
 #include "base/Hairdryer.h"
-#include "base/Hairdryer.cpp"
 #include "base/Phone.h"
-#include "base/Phone.cpp"
 #include "base/VacuumAir.h"
-#include "base/VacuumAir.cpp"
 #include "base/Notebook.h"
-#include "base/Notebook.cpp"
 #include "base/Appliances.h"
-#include "base/Appliances.cpp"
 #include "base/Technics.h"
-#include "base/Technics.cpp"
 #include "base/IElectronics.h"
 #include "base/Device.h"
-#include "base/Device.cpp"
 
 
 using namespace std;
@@ -33,7 +26,7 @@ Storage::~Storage()
 bool Storage::AddElectronic(IElectronics* electronic)
 {
     if (_size - _units < 1) return false;
-    for (size_t i = 0; i < _size; i++)
+    for (int i = 0; i < _size; i++)
     {
         if (!data[i]) {
             data[i] = electronic;
